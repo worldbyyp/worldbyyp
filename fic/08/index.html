@@ -34,7 +34,10 @@
 
   * {
     margin: 0; padding: 0; box-sizing: border-box;
-   
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
   }
   html, body {
     background: var(--bg);
@@ -389,7 +392,7 @@
   .bookmark-popup-btns button:hover { border-color: #fff; color: #fff; }
 </style>
 </head>
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
 <!-- 진행바 -->
 <div id="progress-bar"></div>
@@ -1652,6 +1655,9 @@
 
 <script>
   // 우클릭/드래그 방지
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); return false; }, true);
+  document.addEventListener('selectstart', function(e){ e.preventDefault(); return false; }, true);
+  document.addEventListener('dragstart', function(e){ e.preventDefault(); return false; }, true);
 
   // 진행바 + TOP 버튼
   window.addEventListener('scroll', function() {
