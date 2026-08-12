@@ -394,7 +394,7 @@
   .bookmark-popup-btns button:hover { border-color: #fff; color: #fff; }
 </style>
 </head>
-<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+<body onselectstart="return false" ondragstart="return false">
   <div id="adult-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0b0b14;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:'Nanum Gothic',sans-serif;">
     <div style="display:flex;flex-direction:column;align-items:center;gap:24px;">
       <div style="color:#aaaaaa;font-size:13px;letter-spacing:2px;">비밀번호를 입력하세요</div>
@@ -3371,9 +3371,6 @@
 
 <script>
   // 우클릭/드래그 방지
-  document.addEventListener('contextmenu', function(e){ e.preventDefault(); return false; }, true);
-  document.addEventListener('selectstart', function(e){ e.preventDefault(); return false; }, true);
-  document.addEventListener('dragstart', function(e){ e.preventDefault(); return false; }, true);
 
   // 진행바 + TOP 버튼
   window.addEventListener('scroll', function() {
